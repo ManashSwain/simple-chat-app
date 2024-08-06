@@ -50,3 +50,5 @@ How to Use
 
     Messages:
         Messages will be displayed in real-time as they are sent and received.
+
+Project url : https://simple-chat-app-plum.vercel.app/
