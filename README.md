@@ -1,8 +1,11 @@
-# React + Vite
+Steps for setting socket.io in client 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. import {io} from "socket.io-client" .
 
-Currently, two official plugins are available:
+2. Make a memo and load the component:  const socket = useMemo(()=>io("http://localhost:3000"), []) ;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3.  Render it in useEffect : useEffect(()=>{
+      socket.on("connect" , ()=>{
+        console.log(`Connected and socket ID is : ${socket.id}`);
+      })
+    } , [])
