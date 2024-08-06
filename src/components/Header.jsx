@@ -21,6 +21,10 @@ const Header = () => {
             setMessages((messages)=>[...messages , data])
          })
        })
+
+       return ()=>{
+        socket.disconnect();
+       }
     },[])
 
     const handleSubmit = (e)=>{
