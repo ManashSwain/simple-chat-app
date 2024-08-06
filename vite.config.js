@@ -6,10 +6,9 @@ export default defineConfig({
   server : {
     proxy : {
       '/' : {
-        target : "https://chatapp-backend-alpha.vercel.app/" ,
+        target : "https://chatapp-backend-alpha.vercel.app" ,
         changeOrigin : true ,
         secure : true,
-        rewrite : (path) => path.replace(/^\/api/, '')
       }
     }
   },
