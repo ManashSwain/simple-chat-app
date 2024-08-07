@@ -11,7 +11,6 @@ const Header = () => {
 
     const socket = useMemo(() => io("https://chatapp-backend-alpha.vercel.app", {
       transports: ['websocket', 'polling'],
-      withCredentials: true
     }), [socket]);
     
     useEffect(()=>{
