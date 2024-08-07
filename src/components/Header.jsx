@@ -11,7 +11,7 @@ const Header = () => {
 
     const socket = useMemo(() => io("https://chatapp-backend-alpha.vercel.app", {
       transports: ['websocket', 'polling'],
-    }), [socket]);
+    }), []);
     
     useEffect(()=>{
        socket.on("connect" , () => {
@@ -25,7 +25,7 @@ const Header = () => {
        return ()=>{
         socket.disconnect();
        }
-    },[])
+    },[socket])
 
     const handleSubmit = (e)=>{
        e.preventDefault();
