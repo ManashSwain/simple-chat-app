@@ -9,9 +9,7 @@ const Header = () => {
     const [roomName , setroomName] = useState("");
     const [messages, setMessages] = useState([]);
 
-    const socket = useMemo(() => io("https://chatapp-backend-alpha.vercel.app", {
-      transports: ['websocket', 'polling'],
-    }), []);
+    const socket = useMemo(() => io("http://localhost:3000"), []);
     
     useEffect(()=>{
        socket.on("connect" , () => {
@@ -25,7 +23,7 @@ const Header = () => {
        return ()=>{
         socket.disconnect();
        }
-    },[socket])
+    },[])
 
     const handleSubmit = (e)=>{
        e.preventDefault();
