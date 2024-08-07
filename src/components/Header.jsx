@@ -9,9 +9,7 @@ const Header = () => {
     const [roomName , setroomName] = useState("");
     const [messages, setMessages] = useState([]);
 
-    const socket = useMemo(() => io("https://chatapp-backend-alpha.vercel.app" , {
-      transports: ['websocket', 'polling']
-    }), []);
+    const socket = useMemo(() => io("https://chatapp-backend-alpha.vercel.app" ), []);
     
     useEffect(()=>{
        socket.on("connect" , () => {
