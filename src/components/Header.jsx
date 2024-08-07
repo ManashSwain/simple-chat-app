@@ -23,7 +23,7 @@ const Header = () => {
        return ()=>{
         socket.disconnect();
        }
-    },[socket])
+    },[])
 
     const handleSubmit = (e)=>{
        e.preventDefault();
