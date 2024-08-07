@@ -5,10 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server : {
     proxy : {
-      '/' : {
+      '/socket.io' : {
         target : "https://chatapp-backend-alpha.vercel.app" ,
         changeOrigin : true ,
         secure : true,
+        ws:true
       }
     }
   },
